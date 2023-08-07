@@ -4,15 +4,22 @@ import { CopyText, StyledContainer, StyledHeader, TestContainer, UrlText } from 
 import { RectangleBtn, Tooltip } from '@/components';
 import { clipboardCopy } from '@/utils/clipboardCopy';
 import { useTooltip } from '@/hooks/useTooltip';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateRoom() {
   const [url] = useState('http://awefas.fasefasdf.aewf');
 
   const { toolTip, setTooltipVisible } = useTooltip();
 
+  const naviagte = useNavigate();
+
   const handleCopyURL = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     clipboardCopy(url)(e);
     setTooltipVisible();
+  };
+
+  const handleNextPage = () => {
+    naviagte('/explain');
   };
 
   return (
@@ -28,7 +35,7 @@ export default function CreateRoom() {
         <UrlText>{url}</UrlText>
         <CopyText onClick={handleCopyURL}>복사해서 팀원에게 공유하기</CopyText>
         {toolTip && <Tooltip>URL이 클립보드에 복사되었습니다</Tooltip>}
-        <RectangleBtn text="시작하기" />
+        <RectangleBtn text="시작하기" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
   );
