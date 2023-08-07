@@ -2,7 +2,6 @@ import { StyledTitle, StyledContainer, IglooImg } from './styles';
 import mainIgloo from '@assets/mainIgloo.png';
 import { RectangleBtn } from '@/components';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 export default function Main() {
   const navigate = useNavigate();
@@ -13,19 +12,13 @@ export default function Main() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
-    >
-      <StyledContainer>
-        <StyledTitle>
-          아직은 조금 차가운 우리팀, <br />
-          아이스브레이킹을 시작해볼까요?
-        </StyledTitle>
-        <IglooImg src={mainIgloo} alt="메인페이지 이글루" />
-        <RectangleBtn text="입장하기" onClick={handleNextPage} />
-      </StyledContainer>
-    </motion.div>
+    <StyledContainer>
+      <StyledTitle>
+        아직은 조금 차가운 우리팀, <br />
+        아이스브레이킹을 시작해볼까요?
+      </StyledTitle>
+      <IglooImg src={mainIgloo} alt="메인페이지 이글루" />
+      <RectangleBtn text="입장하기" onClick={handleNextPage} />
+    </StyledContainer>
   );
 }
