@@ -3,17 +3,16 @@ import { motion } from 'framer-motion';
 import { CopyText, StyledContainer, StyledHeader, TestContainer, UrlText } from './styles';
 import { RectangleBtn, Tooltip } from '@/components';
 import { clipboardCopy } from '@/utils/clipboardCopy';
+import { useTooltip } from '@/hooks/useTooltip';
 
 export default function CreateRoom() {
   const [url] = useState('http://awefas.fasefasdf.aewf');
-  const [toolTip, setTooltip] = useState(false);
+
+  const { toolTip, setTooltipVisible } = useTooltip();
 
   const handleCopyURL = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     clipboardCopy(url)(e);
-    setTooltip(true);
-    setTimeout(() => {
-      setTooltip(false);
-    }, 2000);
+    setTooltipVisible();
   };
 
   return (
