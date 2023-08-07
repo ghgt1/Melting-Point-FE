@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
 #root {
   width: 100%;
   max-width: 1024px;
-  padding: 0 16px;
   margin: 0 auto;
 }
 
