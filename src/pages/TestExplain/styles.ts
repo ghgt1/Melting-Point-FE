@@ -38,6 +38,7 @@ export const StyledInput = styled.input`
   padding-bottom: 6px;
 
   &::placeholder {
+    font-size: 14px;
     text-align: center;
   }
 
