@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Main, CreateRoom } from './pages';
+import { Main, CreateRoom, TestExplain } from './pages';
 import { AnimateLayout } from './components';
 
 const route = [
@@ -15,6 +15,10 @@ const route = [
       {
         path: '/create',
         element: <CreateRoom />,
+      },
+      {
+        path: '/explain',
+        element: <TestExplain />,
       },
     ],
   },
