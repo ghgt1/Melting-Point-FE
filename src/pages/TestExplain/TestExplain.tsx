@@ -2,19 +2,29 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { StyledContainer, StyledTitle, ExplainImg, NameNoticeSpan, StyledInput } from './styles';
 import TestExplainImg from '@assets/testExplain.png';
-import { RectangleBtn } from '@/components';
+import { RectangleBtn, Tooltip } from '@/components';
+import { nickNamePattern } from '@/constants/nicknamePattern';
+import { useTooltip } from '@/hooks/useTooltip';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function TestExplain() {
   const [name, setName] = useState('');
-
-  // TODO:닉네임 validation 필요
+  const { toolTip, setTooltipVisible } = useTooltip();
+  const navigate = useNavigate();
+  const { token } = useParams();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
   const handleNextPage = () => {
-    // TODO: 심리테스트 페이지로 이동
+    // 유효성검사
+    const isValidNickname = nickNamePattern.test(name);
+    if (!isValidNickname) {
+      setTooltipVisible();
+    } else {
+      navigate(`/test/${token}`);
+    }
   };
 
   return (
@@ -35,6 +45,7 @@ export default function TestExplain() {
           value={name}
           onChange={handleInputChange}
         />
+        {toolTip && <Tooltip>닉네임은 특수문자 제외 1글자이상, 7글자 이하여야합니다.</Tooltip>}
         <RectangleBtn text="입장하기" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
