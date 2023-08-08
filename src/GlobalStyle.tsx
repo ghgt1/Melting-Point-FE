@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Pretendard', sans-serif;
-    background-color: #f4f6f8;
+    background-color: #000000;
   }
 
   main {
