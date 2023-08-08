@@ -1,21 +1,26 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Main from '@pages/Main';
+import { Main, CreateRoom, TestExplain } from './pages';
+import { AnimateLayout } from './components';
 
 const route = [
   {
-    path: '',
-    element: <Main />,
+    path: '/',
+    element: <AnimateLayout />,
     errorElement: <div>Error page</div>,
-    // children: [
-    //   {
-    //     path: '',
-    //     element: <IssueList />,
-    //   },
-    //   {
-    //     path: 'issues/:id',
-    //     element: <IssueDetail />,
-    //   },
-    // ],
+    children: [
+      {
+        path: '/',
+        element: <Main />,
+      },
+      {
+        path: '/create',
+        element: <CreateRoom />,
+      },
+      {
+        path: '/explain',
+        element: <TestExplain />,
+      },
+    ],
   },
 ];
 

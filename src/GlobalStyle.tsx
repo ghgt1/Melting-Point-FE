@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
 #root {
   width: 100%;
   max-width: 1024px;
-  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -25,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Pretendard', sans-serif;
+    background-color: #f4f6f8;
   }
 
   main {
