@@ -6,14 +6,16 @@ import { clipboardCopy } from '@/utils/clipboardCopy';
 import { createUrl } from '@/utils/createUrl';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useNavigate } from 'react-router-dom';
-import { useRoomUrl } from '@/apis/getRoomUrl';
+// import { useRoomUrl } from '@/apis/getRoomUrl';
 
 export default function CreateRoom() {
   const { toolTip, setTooltipVisible } = useTooltip();
 
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
 
-  const { data } = useRoomUrl();
+  // const { data } = useRoomUrl();
+
+  const data = 'e323358ae8046237b935e5543a1e62efa8ea42d0';
 
   const url = createUrl(data || '');
 
@@ -23,7 +25,7 @@ export default function CreateRoom() {
   };
 
   const handleNextPage = () => {
-    naviagate('/explain');
+    navigate(`/explain/${data}`);
   };
 
   return (
