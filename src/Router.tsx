@@ -17,7 +17,7 @@ const route = [
         element: <CreateRoom />,
       },
       {
-        path: '/explain',
+        path: '/explain/:token',
         element: <TestExplain />,
       },
     ],
