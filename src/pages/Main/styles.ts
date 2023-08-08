@@ -12,6 +12,7 @@ export const StyledTitle = styled.h2`
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  color: #ffffff;
 `;
 
 export const IglooImg = styled.img`

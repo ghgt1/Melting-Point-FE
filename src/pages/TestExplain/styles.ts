@@ -12,6 +12,7 @@ export const StyledTitle = styled.h2`
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  color: #ffffff;
 `;
 
 export const ExplainImg = styled.img`
@@ -24,7 +25,7 @@ export const NameNoticeSpan = styled.p`
   margin-top: 92.5px;
   font-size: 22px;
   font-weight: bold;
-  color: #000000;
+  color: #ffffff;
 `;
 
 export const StyledInput = styled.input`
@@ -33,8 +34,8 @@ export const StyledInput = styled.input`
   width: 147px;
   height: 25px;
   font-size: 16px;
-  color: #939393;
-  border-bottom: 1px solid #939393;
+  color: #838383;
+  border-bottom: 1px solid #838383;
   padding-bottom: 6px;
 
   &::placeholder {
