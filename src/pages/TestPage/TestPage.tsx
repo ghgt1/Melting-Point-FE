@@ -121,7 +121,7 @@ export default function TestPage() {
             }
           }
         }}
-        text="클릭하세요"
+        text="다음"
       />
     </StyledContainer>
   );
