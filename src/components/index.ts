@@ -1,3 +1,5 @@
 export { default as RectangleBtn } from './RectangleBtn/RectangleBtn';
 export { default as AnimateLayout } from './AnimateLayout/AnimateLayout';
 export { default as Tooltip } from './Tooltip/Tooltip';
+export { default as CardSlide } from './CardSlide/CardSlide';
+export { default as NextBtn } from './NextBtn/NextBtn';

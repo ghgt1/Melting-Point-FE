@@ -9,7 +9,7 @@ export const StyledContainer = styled.main`
 export const StyledHeader = styled.h2`
   font-size: 20px;
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
   margin-top: 73.45px;
 `;
 
@@ -25,13 +25,13 @@ export const TestContainer = styled.div`
 
 export const UrlText = styled.p`
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
   margin-top: 107px;
 `;
 
 export const CopyText = styled.p`
   font-size: 20px;
-  color: #000000;
+  color: #ffffff;
   margin: 18px 0 115px 0;
   text-decoration: underline;
   cursor: pointer;

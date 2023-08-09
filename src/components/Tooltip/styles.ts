@@ -4,12 +4,11 @@ export const StyledTooltip = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
+  /* background-color: #333; */
+  color: #ffffff;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 14px;
-
   white-space: nowrap;
   animation: tooltipSlideUp 0.5s forwards;
   @keyframes tooltipSlideUp {

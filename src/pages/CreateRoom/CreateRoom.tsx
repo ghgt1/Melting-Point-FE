@@ -1,25 +1,31 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CopyText, StyledContainer, StyledHeader, TestContainer, UrlText } from './styles';
 import { RectangleBtn, Tooltip } from '@/components';
 import { clipboardCopy } from '@/utils/clipboardCopy';
+import { createUrl } from '@/utils/createUrl';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useNavigate } from 'react-router-dom';
+// import { useRoomUrl } from '@/apis/getRoomUrl';
 
 export default function CreateRoom() {
-  const [url] = useState('http://awefas.fasefasdf.aewf');
-
   const { toolTip, setTooltipVisible } = useTooltip();
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
+
+  // const { data } = useRoomUrl();
+
+  const data = 'e323358ae8046237b935e5543a1e62efa8ea42d0';
+
+  const url = createUrl(data || '');
 
   const handleCopyURL = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    clipboardCopy(url)(e);
+    if (data) clipboardCopy(url)(e);
     setTooltipVisible();
   };
 
   const handleNextPage = () => {
-    naviagte('/explain');
+    navigate(`/explain/${data}`);
   };
 
   return (
