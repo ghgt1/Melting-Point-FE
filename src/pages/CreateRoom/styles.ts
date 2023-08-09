@@ -13,20 +13,15 @@ export const StyledHeader = styled.h2`
   margin-top: 73.45px;
 `;
 
-// TODO: 이미지 받기 전에 테스트용 style컨테이너 생성
-
-export const TestContainer = styled.div`
-  width: 325px;
-  height: 240px;
-  background-color: #efefef;
-  margin-top: 10px;
-  border-radius: 15px;
+export const MainImg = styled.img`
+  width: 180px;
+  margin-top: 70px;
 `;
 
 export const UrlText = styled.p`
   font-size: 18px;
   color: #ffffff;
-  margin-top: 107px;
+  margin-top: 70px;
 `;
 
 export const CopyText = styled.p`

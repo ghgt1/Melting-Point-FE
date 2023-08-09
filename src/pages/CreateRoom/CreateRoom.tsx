@@ -1,11 +1,12 @@
 // import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CopyText, StyledContainer, StyledHeader, TestContainer, UrlText } from './styles';
+import { CopyText, StyledContainer, StyledHeader, MainImg, UrlText } from './styles';
 import { RectangleBtn, Tooltip } from '@/components';
 import { clipboardCopy } from '@/utils/clipboardCopy';
 import { createUrl } from '@/utils/createUrl';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useNavigate } from 'react-router-dom';
+import charwithHat from '@assets/charWithHat.png';
 // import { useRoomUrl } from '@/apis/getRoomUrl';
 
 export default function CreateRoom() {
@@ -36,12 +37,12 @@ export default function CreateRoom() {
     >
       <StyledContainer>
         <StyledHeader>우리 팀의 방이 생성되었어요</StyledHeader>
-        <TestContainer />
+        <MainImg src={charwithHat} alt={'메인이미지'} />
         {/* TODO: 테스트용 URL. 추후에 api와 결합하여 URL작성 */}
         <UrlText>{url}</UrlText>
         <CopyText onClick={handleCopyURL}>복사해서 팀원에게 공유하기</CopyText>
         {toolTip && <Tooltip>URL이 클립보드에 복사되었습니다</Tooltip>}
-        <RectangleBtn text="시작하기" onClick={handleNextPage} />
+        <RectangleBtn text="입장할게요" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
   );
