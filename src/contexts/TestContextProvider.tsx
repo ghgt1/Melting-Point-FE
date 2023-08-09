@@ -5,7 +5,7 @@ interface TestContextProviderProps {
 }
 
 export const TestContext = createContext<null | {
-  result: string | null;
+  result: string;
   setResult: React.Dispatch<React.SetStateAction<string>>;
 }>(null);
 
