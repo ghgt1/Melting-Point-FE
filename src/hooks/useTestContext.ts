@@ -1,4 +1,4 @@
-import { TestContext } from '@/components/Contexts/TestContextProvider';
+import { TestContext } from '@/contexts/TestContextProvider';
 import { useContext } from 'react';
 
 export function useTestContext() {
