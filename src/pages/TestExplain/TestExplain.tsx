@@ -44,13 +44,9 @@ export default function TestExplain() {
         </StyledTitle>
         <ExplainImg src={TestExplainImg} alt="테스트 설명 이미지" />
         <NameNoticeSpan>닉네임을 설정해 주세요</NameNoticeSpan>
-        <StyledInput
-          placeholder="닉네임을 입력해주세요"
-          value={name}
-          onChange={handleInputChange}
-        />
+        <StyledInput placeholder="한글, 영문만 가능" value={name} onChange={handleInputChange} />
         {toolTip && <Tooltip>닉네임은 특수문자 제외 1글자이상, 7글자 이하여야합니다.</Tooltip>}
-        <RectangleBtn text="입장하기" onClick={handleNextPage} />
+        <RectangleBtn text="테스트 할게요" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
   );
