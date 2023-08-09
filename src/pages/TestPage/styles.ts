@@ -14,6 +14,7 @@ export const ImgContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 15px;
+  margin-bottom: 20px;
   white-space: pre-line;
 `;
 
@@ -24,6 +25,7 @@ export const ExplainSpan = styled.p`
   width: 212px;
   height: 66px;
   white-space: pre-line;
+  line-height: 33px;
 `;
 
 export const CharImg = styled.img`

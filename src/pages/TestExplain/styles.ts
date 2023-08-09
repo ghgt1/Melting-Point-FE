@@ -13,6 +13,7 @@ export const StyledTitle = styled.h2`
   font-weight: bold;
   text-align: center;
   color: #ffffff;
+  line-height: 33px;
 `;
 
 export const ExplainImg = styled.img`

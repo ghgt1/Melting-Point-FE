@@ -7,6 +7,7 @@ export const StyledContainer = styled.main`
 `;
 
 export const StyledTitle = styled.h2`
+  line-height: 30px;
   margin-top: 55px;
   white-space: pre-line;
   font-size: 22px;

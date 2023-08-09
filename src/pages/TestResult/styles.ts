@@ -16,6 +16,7 @@ export const DoneText = styled.p`
 `;
 
 export const TitleText = styled.p`
+  line-height: 30px;
   font-size: 22px;
   font-weight: bold;
   color: #ffffff;
@@ -33,17 +34,11 @@ export const CardImage = styled.img`
 `;
 
 export const ExplainText = styled.p`
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-  height: 26px;
-  margin-top: 4px;
-`;
-
-export const NickNameText = styled.p`
-  height: 30px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
+  line-height: 26px;
+  margin: 0 32px;
   text-align: center;
+  font-size: 16px;
+  color: #c0c0c0;
+  height: 52px;
+  margin-top: 4px;
 `;
