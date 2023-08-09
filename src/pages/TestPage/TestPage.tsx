@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledContainer, ExplainSpan, ImgContainer, CharImg } from './styles';
 import { Line } from 'rc-progress';
 import { CardSlide, NextBtn, Tooltip } from '@/components';
@@ -7,6 +7,7 @@ import { testList } from '@/constants/testList';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useTestContext } from '@/hooks/useTestContext';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function TestPage() {
   const [page, setPage] = useState(1);
@@ -14,6 +15,16 @@ export default function TestPage() {
   const { result } = useTestContext();
 
   const { toolTip, setTooltipVisible } = useTooltip();
+
+  const navigate = useNavigate();
+
+  const { token } = useParams();
+
+  useEffect(() => {
+    if (page === 5) {
+      navigate(`/result/${token}`);
+    }
+  }, [page]);
 
   return (
     <StyledContainer>
@@ -67,7 +78,7 @@ export default function TestPage() {
             )}
             {page === 4 && (
               <motion.div
-                key={testList[3][0]}
+                key={testList[0][0]}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
@@ -78,6 +89,7 @@ export default function TestPage() {
           </>
         }
       </AnimatePresence>
+      {toolTip && <Tooltip>선택지를 골라주세요</Tooltip>}
       <NextBtn
         onClick={() => {
           if (page === 1) {
@@ -111,7 +123,6 @@ export default function TestPage() {
         }}
         text="클릭하세요"
       />
-      {toolTip && <Tooltip>선택지를 골라주세요</Tooltip>}
     </StyledContainer>
   );
 }
