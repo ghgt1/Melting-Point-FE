@@ -6,6 +6,8 @@ export const StyledContainer = styled.main`
   align-items: center;
   margin: 0 32px;
   white-space: pre-line;
+  position: relative;
+  min-height: 100vh;
 `;
 
 export const ImgContainer = styled.div`
