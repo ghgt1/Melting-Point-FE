@@ -6,12 +6,15 @@ import { RectangleBtn, Tooltip } from '@/components';
 import { nickNamePattern } from '@/constants/nicknamePattern';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useNickNameContext } from '@/hooks/useNickNameContext';
 
 export default function TestExplain() {
   const [name, setName] = useState('');
   const { toolTip, setTooltipVisible } = useTooltip();
   const navigate = useNavigate();
   const { token } = useParams();
+
+  const { setNickName } = useNickNameContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -23,6 +26,7 @@ export default function TestExplain() {
     if (!isValidNickname) {
       setTooltipVisible();
     } else {
+      setNickName(name);
       navigate(`/test/${token}`);
     }
   };
