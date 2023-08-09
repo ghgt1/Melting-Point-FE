@@ -1,11 +1,4 @@
-import {
-  StyledContainer,
-  DoneText,
-  TitleText,
-  CardImage,
-  ExplainText,
-  NickNameText,
-} from './styles';
+import { StyledContainer, DoneText, TitleText, CardImage, ExplainText } from './styles';
 import { useNickNameContext } from '@/hooks/useNickNameContext';
 import charOrange from '@assets/charOrange.png';
 import charYellow from '@assets/charYellow.png';
@@ -53,8 +46,7 @@ export default function TestResult() {
           {`${testResult[result][1]}이네요!`}
         </TitleText>
         <CardImage src={imgSrc} alt={testResult[result][1]} />
-        <NickNameText>{nickName}</NickNameText>
-        <ExplainText>{testResult[result][1]}</ExplainText>
+        <ExplainText>{testResult[result][2]}</ExplainText>
         <NextBtn text="다음" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
