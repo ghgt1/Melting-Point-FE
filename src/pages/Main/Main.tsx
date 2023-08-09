@@ -14,7 +14,7 @@ export default function Main() {
   return (
     <StyledContainer>
       <StyledTitle>
-        아직은 조금 차가운 우리팀, <br />
+        아직은 꽁꽁 얼어있는 우리 팀, <br />
         아이스브레이킹을 시작해볼까요?
       </StyledTitle>
       <IglooImg src={mainIgloo} alt="메인페이지 이글루" />
