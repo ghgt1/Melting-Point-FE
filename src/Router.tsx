@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Main, CreateRoom, TestExplain, TestPage, TestResult } from './pages';
+import { Main, CreateRoom, TestExplain, TestPage, TestResult, GameLobby } from './pages';
 import { AnimateLayout } from './components';
 
 const route = [
@@ -27,6 +27,17 @@ const route = [
       {
         path: '/result/:token',
         element: <TestResult />,
+      },
+    ],
+  },
+  {
+    path: '/game',
+    element: <AnimateLayout />,
+    errorElement: <div>Error page</div>,
+    children: [
+      {
+        path: 'lobby/:token',
+        element: <GameLobby />,
       },
     ],
   },
