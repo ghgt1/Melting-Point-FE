@@ -1,7 +1,7 @@
 import instance from './axios';
 import { useMutation } from '@tanstack/react-query';
 import { POST_ROOM_CHECKIN_KEY } from '@/constants/querykey';
-import { useNavigateHook } from '@/hooks/useNavigate';
+import { useNavigate } from 'react-router-dom';
 
 type createRoomParams = {
   img_id: number;
@@ -20,7 +20,7 @@ export const postRoomCheckIn = async (params: createRoomParams) => {
 };
 
 export const useRoomCheckIn = (params: createRoomParams) => {
-  const navigate = useNavigateHook();
+  const navigate = useNavigate();
   return useMutation([POST_ROOM_CHECKIN_KEY], () => postRoomCheckIn(params), {
     onError: (error) => {
       console.error('Query 처리중 에러가 발생하였습니다:', error);
