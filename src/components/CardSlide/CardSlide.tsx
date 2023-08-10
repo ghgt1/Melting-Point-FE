@@ -33,11 +33,11 @@ export default function CardSlide({ question, alpha, beta }: CardSlideProps) {
         <BigMarker>Q.</BigMarker>
         {question}
       </QuestionContainer>
-      <ListContainer check={select === 1} onClick={handleClickTestFirst}>
+      <ListContainer $isCheck={select === 1} onClick={handleClickTestFirst}>
         <Marker>A.</Marker>
         {alpha}
       </ListContainer>
-      <ListContainer check={select === 2} onClick={handleClickTestSecond}>
+      <ListContainer $isCheck={select === 2} onClick={handleClickTestSecond}>
         <Marker>B.</Marker>
         {beta}
       </ListContainer>

@@ -13,7 +13,7 @@ export const CardContainer = styled.div`
   text-align: center;
 `;
 
-export const ListContainer = styled.div<{ check: boolean }>`
+export const ListContainer = styled.div<{ $isCheck: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@ export const ListContainer = styled.div<{ check: boolean }>`
   width: 280px;
   height: 130px;
   padding: 0 48.5px;
-  background-color: ${(props) => (props.check ? '#3163cf' : '#5978b9')};
+  background-color: ${(props) => (props.$isCheck ? '#3163cf' : '#5978b9')};
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
