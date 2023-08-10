@@ -5,3 +5,4 @@ export { default as TestPage } from './TestPage/TestPage';
 export { default as TestResult } from './TestResult/TestResult';
 export { default as GameLobby } from './GameLobby/GameLobby';
 export { default as GameExplain } from './GameExplain/GameExplain';
+export { default as Adjective } from './Adjective/Adjective';
