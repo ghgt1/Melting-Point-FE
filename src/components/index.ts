@@ -3,3 +3,4 @@ export { default as AnimateLayout } from './AnimateLayout/AnimateLayout';
 export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as CardSlide } from './CardSlide/CardSlide';
 export { default as NextBtn } from './NextBtn/NextBtn';
+export { default as MemberImgCard } from './MemberImgCard/MemberImgCard';
