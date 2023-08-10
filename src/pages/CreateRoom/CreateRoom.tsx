@@ -16,7 +16,7 @@ export default function CreateRoom() {
 
   // const { data } = useRoomUrl();
 
-  const data = '5be0e2a4fc9c312f2c9d1ea84833addf8e095972';
+  const data = '8bfdeda9b792a4409826c6b4107dceab8d7ad99a';
 
   const url = createUrl(data || '');
 
