@@ -10,17 +10,28 @@ import { useTestContext } from '@/hooks/useTestContext';
 import { testResult } from '@/constants/testList';
 import { useParams } from 'react-router-dom';
 import { useRoomCheckIn } from '@/apis/postRoomCheckIn';
+import { useEffect } from 'react';
 
 export default function TestResult() {
   const { nickName } = useNickNameContext();
   const { result } = useTestContext();
   const { token } = useParams();
 
-  const { mutate } = useRoomCheckIn({
+  const { data, mutate } = useRoomCheckIn({
     img_id: testResult[result][0],
     nickname: nickName || ' ',
     url: token || ' ',
   });
+
+  console.log(data);
+
+  useEffect(() => {
+    console.log(data);
+    if (data) {
+      // Data is available, handle it here
+      console.log(data);
+    }
+  }, [data]);
 
   const handleNextPage = () => {
     mutate();

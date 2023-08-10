@@ -5,11 +5,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function GameExplain() {
-  const { token } = useParams();
+  const { token, userId } = useParams();
   const navigate = useNavigate();
 
   const handleNextPage = () => {
-    navigate(`/game/lobby/${token}`);
+    navigate(`/game/lobby/${userId}/${token}`);
   };
 
   return (
