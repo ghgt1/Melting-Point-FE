@@ -8,13 +8,22 @@ import { NextBtn } from '@/components';
 import { motion } from 'framer-motion';
 import { useTestContext } from '@/hooks/useTestContext';
 import { testResult } from '@/constants/testList';
+import { useParams } from 'react-router-dom';
+import { useRoomCheckIn } from '@/apis/postRoomCheckIn';
 
 export default function TestResult() {
   const { nickName } = useNickNameContext();
   const { result } = useTestContext();
+  const { token } = useParams();
+
+  const { mutate } = useRoomCheckIn({
+    img_id: testResult[result][0],
+    nickname: nickName || ' ',
+    url: token || ' ',
+  });
 
   const handleNextPage = () => {
-    console.log('다음페이지이동');
+    mutate();
   };
 
   const imgSrc = (() => {
