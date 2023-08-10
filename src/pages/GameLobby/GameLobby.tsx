@@ -13,6 +13,7 @@ import roomCharGreen from '@assets/roomCharGreen.png';
 import roomCharBlue from '@assets/roomCharBlue.png';
 import { MemberImgCard, NextBtn } from '@/components';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const handleImg = (id: number) => {
   switch (id) {
@@ -37,6 +38,26 @@ export default function GameLobby() {
   const handleNextPage = () => {
     console.log('다음 페이지 이동');
   };
+
+  useEffect(() => {
+    const eventSource = new EventSource(`${import.meta.env.VITE_API_URL}/events`);
+
+    eventSource.addEventListener('statusUpdate', (event) => {
+      const eventData = JSON.parse(event.data);
+      // eventData를 활용하여 UI 업데이트 등의 처리
+      console.log(eventData);
+    });
+
+    eventSource.onmessage = (event) => {
+      // url검증
+      const data = JSON.parse(event.data);
+      console.log(data);
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
 
   return (
     <motion.div
