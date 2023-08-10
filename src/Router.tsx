@@ -1,5 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Main, CreateRoom, TestExplain, TestPage, TestResult, GameLobby } from './pages';
+import {
+  Main,
+  CreateRoom,
+  TestExplain,
+  TestPage,
+  TestResult,
+  GameLobby,
+  GameExplain,
+} from './pages';
 import { AnimateLayout } from './components';
 
 const route = [
@@ -35,6 +43,10 @@ const route = [
     element: <AnimateLayout />,
     errorElement: <div>Error page</div>,
     children: [
+      {
+        path: ':token',
+        element: <GameExplain />,
+      },
       {
         path: 'lobby/:token',
         element: <GameLobby />,
