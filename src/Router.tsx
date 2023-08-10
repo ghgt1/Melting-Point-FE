@@ -7,6 +7,7 @@ import {
   TestResult,
   GameLobby,
   GameExplain,
+  Adjective,
 } from './pages';
 import { AnimateLayout } from './components';
 
@@ -44,12 +45,16 @@ const route = [
     errorElement: <div>Error page</div>,
     children: [
       {
-        path: ':token',
+        path: ':userId/:token',
         element: <GameExplain />,
       },
       {
-        path: 'lobby/:token',
+        path: 'lobby/:userId/:token',
         element: <GameLobby />,
+      },
+      {
+        path: 'adjective/:userId/:token',
+        element: <Adjective />,
       },
     ],
   },
