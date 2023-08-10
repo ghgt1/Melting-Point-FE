@@ -26,7 +26,7 @@ export const useRoomCheckIn = (params: createRoomParams) => {
       console.error('Query 처리중 에러가 발생하였습니다:', error);
     },
     onSuccess: () => {
-      navigate(`/game/lobby/${params.url}`);
+      navigate(`/game/${params.url}`);
     },
   });
 };
