@@ -41,4 +41,5 @@ export const ExplainText = styled.p`
   color: #c0c0c0;
   height: 52px;
   margin-top: 4px;
+  margin-bottom: 50px;
 `;

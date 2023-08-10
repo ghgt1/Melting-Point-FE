@@ -17,11 +17,19 @@ export const StyledTitle = styled.p`
 
 export const Description = styled.p`
   margin-top: 4px;
-  line-height: 22px;
-  white-space: pre-line;
   height: 22px;
   color: #838383;
   text-align: center;
+`;
+
+export const BottomDescription = styled.p`
+  margin-top: 4px;
+  line-height: 22px;
+  white-space: pre-line;
+  height: 44px;
+  color: #838383;
+  text-align: center;
+  margin-bottom: 23px;
 `;
 
 export const MemberContainer = styled.div`

@@ -1,5 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { StyledTitle, Description, StyledContainer, MemberContainer } from './styles';
+import {
+  StyledTitle,
+  Description,
+  StyledContainer,
+  MemberContainer,
+  BottomDescription,
+} from './styles';
 import { useRoomStatus } from '@/apis/getRoomStatus';
 import roomCharOrange from '@assets/roomCharOrange.png';
 import roomCharYellow from '@assets/roomCharYellow.png';
@@ -48,10 +54,10 @@ export default function GameLobby() {
             );
           })}
         </MemberContainer>
-        <Description>
+        <BottomDescription>
           현재 버전에서는 최대 4명의 팀원까지
           <br /> 참여가 가능해요
-        </Description>
+        </BottomDescription>
         <NextBtn text="모두 모였어요 !" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
