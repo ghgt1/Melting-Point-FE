@@ -6,3 +6,9 @@ export const GET_ROOM_STATUS_KEY = 'get-room-status';
 
 // URL에 유저 진입후 가입
 export const POST_ROOM_CHECKIN_KEY = 'post-room-checkin';
+
+// 방 준비완료 PATCH
+export const PATCH_ROOM_READY_KEY = 'patch-room-ready';
+
+// 형용사 선택한것 서버로 전송
+export const POST_ADJECTIVE_USER_KEY = 'post-adjective-user';

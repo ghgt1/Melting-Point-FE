@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   StyledTitle,
   Description,
@@ -14,6 +14,7 @@ import roomCharBlue from '@assets/roomCharBlue.png';
 import { MemberImgCard, NextBtn } from '@/components';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { useRoomReady } from '@/apis/patchRoomReady';
 
 const handleImg = (id: number) => {
   switch (id) {
@@ -31,27 +32,28 @@ const handleImg = (id: number) => {
 };
 
 export default function GameLobby() {
-  const { token } = useParams();
+  const { token, userId } = useParams();
 
-  const { data } = useRoomStatus(token || ' ');
+  const navigate = useNavigate();
+
+  const { data, refetch } = useRoomStatus(token || ' ');
+  const { mutate } = useRoomReady(token || ' ');
 
   const handleNextPage = () => {
     console.log('다음 페이지 이동');
+    mutate();
   };
 
   useEffect(() => {
     const eventSource = new EventSource(`${import.meta.env.VITE_API_URL}/events`);
-
-    eventSource.addEventListener('statusUpdate', (event) => {
-      const eventData = JSON.parse(event.data);
-      // eventData를 활용하여 UI 업데이트 등의 처리
-      console.log(eventData);
-    });
-
     eventSource.onmessage = (event) => {
       // url검증
       const data = JSON.parse(event.data);
-      console.log(data);
+      if (data.status) {
+        navigate(`/game/adjective/${userId}/${token}`);
+      } else {
+        refetch();
+      }
     };
 
     return () => {
@@ -79,7 +81,7 @@ export default function GameLobby() {
           현재 버전에서는 최대 4명의 팀원까지
           <br /> 참여가 가능해요
         </BottomDescription>
-        <NextBtn text="모두 모였어요 !" onClick={handleNextPage} />
+        <NextBtn text="모두 모였어요!" onClick={handleNextPage} />
       </StyledContainer>
     </motion.div>
   );
