@@ -1,8 +1,8 @@
 import { StyledContainer, StyledTitle, StyledDescription, MeltingImg, EndText } from './styles';
-import meltImg1 from '@assets/meltImg1.png';
-import meltImg2 from '@assets/meltImg2.png';
-import meltImg3 from '@assets/meltImg3.png';
-import meltImg4 from '@assets/meltImg4.png';
+import meltImg1 from '@assets/meltImg1.svg';
+import meltImg2 from '@assets/meltImg2.svg';
+import meltImg3 from '@assets/meltImg3.svg';
+import meltImg4 from '@assets/meltImg4.svg';
 import { motion } from 'framer-motion';
 
 type MeltShowProps = { id: number };
