@@ -15,3 +15,6 @@ export const POST_ADJECTIVE_USER_KEY = 'post-adjective-user';
 
 // 이용자들 형용사 선택 목록 받기
 export const GET_USERS_ADJECTIVE_KEY = 'get-users-adjective';
+
+// 각 게임 결과 확인후 다음게임 넘어가기
+export const POST_NEXT_GAME_KEY = 'post-next-game';
