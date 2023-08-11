@@ -21,3 +21,9 @@ export const POST_NEXT_GAME_KEY = 'post-next-game';
 
 // 공통 질문게임에서 다음 질문 넘어가기
 export const PATCH_NEXT_QUESTION_KEY = 'patch-next-question';
+
+// 밸런스게임 투표
+export const POST_BALANCE_USER_KEY = 'post-balance-user';
+
+// 밸런스게임 확인
+export const GET_BALANCE_USER_KEY = 'get-balance-user';
