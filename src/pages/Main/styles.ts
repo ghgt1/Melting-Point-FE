@@ -19,6 +19,6 @@ export const StyledTitle = styled.h2`
 export const IglooImg = styled.img`
   margin-top: 88px;
   width: 375px;
-  height: 326.67px;
+  height: 400px;
   margin-bottom: 83px;
 `;
