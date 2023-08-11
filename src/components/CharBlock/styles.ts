@@ -6,12 +6,12 @@ export const ImgBlock = styled.div`
   align-items: center;
 `;
 
-export const CharImg = styled.img<{ imgWidth: string }>`
-  width: ${(props) => props.imgWidth};
+export const CharImg = styled.img<{ $imgWidth: string }>`
+  width: ${(props) => props.$imgWidth};
 `;
 
-export const StyledText = styled.p<{ textSize: string }>`
-  font-size: ${(props) => props.textSize};
+export const StyledText = styled.p<{ $textSize: string }>`
+  font-size: ${(props) => props.$textSize};
   height: 20px;
   margin-top: 4px;
   font-weight: 600;

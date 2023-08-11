@@ -10,8 +10,8 @@ type CharBlockProps = {
 export default function CharBlock({ text, imgSrc, imgWidth, textSize }: CharBlockProps) {
   return (
     <ImgBlock>
-      <CharImg src={imgSrc} alt="캐릭터이미지" imgWidth={imgWidth} />
-      <StyledText textSize={textSize}>{text}</StyledText>
+      <CharImg src={imgSrc} alt="캐릭터이미지" $imgWidth={imgWidth} />
+      <StyledText $textSize={textSize}>{text}</StyledText>
     </ImgBlock>
   );
 }
