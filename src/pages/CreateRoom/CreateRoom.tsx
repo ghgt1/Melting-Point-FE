@@ -37,7 +37,7 @@ export default function CreateRoom() {
         <StyledHeader>우리 팀의 방이 생성되었어요</StyledHeader>
         <MainImg src={charwithHat} alt={'메인이미지'} />
         {/* TODO: 테스트용 URL. 추후에 api와 결합하여 URL작성 */}
-        <UrlText>{url}</UrlText>
+        <UrlText>{data ? url : ' '}</UrlText>
         <CopyText onClick={handleCopyURL}>복사해서 팀원에게 공유하기</CopyText>
         {toolTip && <Tooltip>URL이 클립보드에 복사되었습니다</Tooltip>}
         <RectangleBtn text="입장할게요" onClick={handleNextPage} />
