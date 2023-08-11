@@ -9,6 +9,7 @@ import {
   GameExplain,
   Adjective,
   AdjectiveResult,
+  Question,
 } from './pages';
 import { AnimateLayout } from './components';
 
@@ -60,6 +61,10 @@ const route = [
       {
         path: 'adjective/result/:userId/:token',
         element: <AdjectiveResult />,
+      },
+      {
+        path: 'question/:userId/:token',
+        element: <Question />,
       },
     ],
   },
