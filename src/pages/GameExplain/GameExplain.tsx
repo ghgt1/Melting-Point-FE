@@ -3,6 +3,7 @@ import gameExplain from '@assets/gameExplain.png';
 import { NextBtn } from '@/components';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function GameExplain() {
   const { token, userId } = useParams();
@@ -11,6 +12,23 @@ export default function GameExplain() {
   const handleNextPage = () => {
     navigate(`/game/lobby/${userId}/${token}`);
   };
+
+  useEffect(() => {
+    const eventSource = new EventSource(`${import.meta.env.VITE_API_URL}/events`);
+    eventSource.onmessage = (event) => {
+      // url검증
+      const data = JSON.parse(event.data);
+      if (data.url === token) {
+        if (data.status) {
+          navigate(`/game/adjective/${userId}/${token}`);
+        }
+      }
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
 
   return (
     <motion.div
