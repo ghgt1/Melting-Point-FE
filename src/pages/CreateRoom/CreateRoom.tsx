@@ -7,16 +7,14 @@ import { createUrl } from '@/utils/createUrl';
 import { useTooltip } from '@/hooks/useTooltip';
 import { useNavigate } from 'react-router-dom';
 import charwithHat from '@assets/charWithHat.png';
-// import { useRoomUrl } from '@/apis/getRoomUrl';
+import { useRoomUrl } from '@/apis/getRoomUrl';
 
 export default function CreateRoom() {
   const { toolTip, setTooltipVisible } = useTooltip();
 
   const navigate = useNavigate();
 
-  // const { data } = useRoomUrl();
-
-  const data = '62e30190ab2108b0a633d402ed4a78a35a740134';
+  const { data } = useRoomUrl();
 
   const url = createUrl(data || '');
 
