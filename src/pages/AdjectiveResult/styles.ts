@@ -49,7 +49,6 @@ export const ResultContainer = styled.div`
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
   width: 200px;
   height: 90px;
   row-gap: 6px;
