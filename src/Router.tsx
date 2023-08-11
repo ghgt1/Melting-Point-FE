@@ -8,6 +8,7 @@ import {
   GameLobby,
   GameExplain,
   Adjective,
+  AdjectiveResult,
 } from './pages';
 import { AnimateLayout } from './components';
 
@@ -55,6 +56,10 @@ const route = [
       {
         path: 'adjective/:userId/:token',
         element: <Adjective />,
+      },
+      {
+        path: 'adjective/result/:userId/:token',
+        element: <AdjectiveResult />,
       },
     ],
   },
