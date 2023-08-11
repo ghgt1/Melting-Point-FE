@@ -10,6 +10,8 @@ import {
   Adjective,
   AdjectiveResult,
   Question,
+  Balance,
+  BalanceResult,
 } from './pages';
 import { AnimateLayout } from './components';
 
@@ -65,6 +67,14 @@ const route = [
       {
         path: 'question/:userId/:token',
         element: <Question />,
+      },
+      {
+        path: 'balance/:userId/:token/:number',
+        element: <Balance />,
+      },
+      {
+        path: 'balance/result/:userId/:token/:number',
+        element: <BalanceResult />,
       },
     ],
   },
