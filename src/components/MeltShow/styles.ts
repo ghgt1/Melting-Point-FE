@@ -26,7 +26,7 @@ export const StyledDescription = styled.p`
 
 export const MeltingImg = styled.img`
   width: 375px;
-  height: 336px;
+  height: 400px;
   margin-bottom: 51px;
 `;
 
