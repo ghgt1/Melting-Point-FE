@@ -49,10 +49,12 @@ export default function GameLobby() {
     eventSource.onmessage = (event) => {
       // url검증
       const data = JSON.parse(event.data);
-      if (data.status) {
-        navigate(`/game/adjective/${userId}/${token}`);
-      } else {
-        refetch();
+      if (data.url === token) {
+        if (data.status) {
+          navigate(`/game/adjective/${userId}/${token}`);
+        } else {
+          refetch();
+        }
       }
     };
 
