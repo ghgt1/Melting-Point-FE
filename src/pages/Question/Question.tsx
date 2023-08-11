@@ -15,7 +15,7 @@ import { useNextQuestion } from '@/apis/patchNextQuestion';
 export default function Question() {
   const [page, setPage] = useState(1);
   const [meltShow, setMeltShow] = useState(false);
-  const { token } = useParams();
+  const { token, userId } = useParams();
 
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ export default function Question() {
           if (page === 4) {
             setMeltShow(true);
             setTimeout(() => {
-              navigate(`/`);
+              navigate(`/game/balance/${userId}/${token}/1`);
             }, 3000);
           } else {
             setPage((prevState) => {
