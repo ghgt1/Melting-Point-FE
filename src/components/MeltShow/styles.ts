@@ -12,11 +12,13 @@ export const StyledTitle = styled.p`
   font-size: 22px;
   font-weight: bold;
   white-space: pre-line;
+  text-align: center;
   height: 66px;
   margin-bottom: 6px;
 `;
 
 export const StyledDescription = styled.p`
+  text-align: center;
   color: #838383;
   margin-bottom: 53px;
   height: 22px;
@@ -29,6 +31,7 @@ export const MeltingImg = styled.img`
 `;
 
 export const EndText = styled.p`
+  text-align: center;
   font-weight: bold;
   font-size: 22px;
   line-height: 33px;
