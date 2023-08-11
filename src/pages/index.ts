@@ -8,3 +8,5 @@ export { default as GameExplain } from './GameExplain/GameExplain';
 export { default as Adjective } from './Adjective/Adjective';
 export { default as AdjectiveResult } from './AdjectiveResult/AdjectiveResult';
 export { default as Question } from './Question/Question';
+export { default as Balance } from './Balance/Balance';
+export { default as BalanceResult } from './BalanceResult/BalanceResult';
