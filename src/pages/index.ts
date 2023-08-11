@@ -7,3 +7,4 @@ export { default as GameLobby } from './GameLobby/GameLobby';
 export { default as GameExplain } from './GameExplain/GameExplain';
 export { default as Adjective } from './Adjective/Adjective';
 export { default as AdjectiveResult } from './AdjectiveResult/AdjectiveResult';
+export { default as Question } from './Question/Question';
