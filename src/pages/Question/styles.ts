@@ -11,7 +11,7 @@ export const StyledContainer = styled.main`
 
 export const TopContainer = styled.div`
   display: flex;
-  gap: 60px;
+  gap: 15px;
   margin-top: 56px;
   align-items: center;
 `;
@@ -26,4 +26,10 @@ export const StyledTitle = styled.p`
 
 export const CharImg = styled.img`
   width: 87px;
+`;
+
+export const QuestionImg = styled.img`
+  margin-top: 28px;
+  width: 327px;
+  height: 445px;
 `;
