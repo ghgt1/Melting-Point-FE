@@ -18,3 +18,6 @@ export const GET_USERS_ADJECTIVE_KEY = 'get-users-adjective';
 
 // 각 게임 결과 확인후 다음게임 넘어가기
 export const POST_NEXT_GAME_KEY = 'post-next-game';
+
+// 공통 질문게임에서 다음 질문 넘어가기
+export const PATCH_NEXT_QUESTION_KEY = 'patch-next-question';
