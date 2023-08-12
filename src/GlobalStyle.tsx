@@ -19,7 +19,11 @@ export const GlobalStyle = createGlobalStyle`
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
-    overflow:hidden;
+    overflow-x:hidden;
+    //웹뷰용 설정 추가
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    user-select: none;
+    -webkit-touch-callout: none;
   }
 
   body {
@@ -27,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard', sans-serif;
     background-color: #000000;
     color: #ffffff;
-    overflow:hidden;
+    overflow-x:hidden;
     position:relative
   }
 

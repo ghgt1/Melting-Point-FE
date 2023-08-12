@@ -8,6 +8,7 @@ export const MainButton = styled.button<{ $isFinish: boolean }>`
   height: 90px;
   border-radius: 12px 12px 0 0;
   width: 100vw;
+  max-width: 1024px;
   cursor: pointer;
   position: absolute;
   bottom: 0;
