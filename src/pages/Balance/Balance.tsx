@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import balanceChar from '@assets/balanceChar.svg';
+import balanceChar from '@assets/balanceChar.png';
 import {
   StyledContainer,
   StyledTitle,

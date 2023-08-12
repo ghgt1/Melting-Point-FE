@@ -1,5 +1,5 @@
 import { StyledTitle, StyledContainer, IglooImg } from './styles';
-import mainIgloo from '@assets/mainIgloo.svg';
+import mainIgloo from '@assets/mainIgloo.png';
 import { RectangleBtn } from '@/components';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import charwithHat from '@assets/charWithHat.png';
-import question1 from '@assets/question1.svg';
-import question2 from '@assets/question2.svg';
-import question3 from '@assets/question3.svg';
-import question4 from '@assets/question4.svg';
+import question1 from '@assets/question1.png';
+import question2 from '@assets/question2.png';
+import question3 from '@assets/question3.png';
+import question4 from '@assets/question4.png';
 import { StyledContainer, TopContainer, StyledTitle, CharImg, QuestionImg } from './styles';
 import { pageCountConvert } from '@/utils/pageCountConvert';
 import { AnimatePresence, motion } from 'framer-motion';
