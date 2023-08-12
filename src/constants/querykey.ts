@@ -7,6 +7,9 @@ export const GET_ROOM_STATUS_KEY = 'get-room-status';
 // URL에 유저 진입후 가입
 export const POST_ROOM_CHECKIN_KEY = 'post-room-checkin';
 
+// 방 입장 가능한지 확인
+export const GET_GAME_START_KEY = 'get-game-start';
+
 // 방 준비완료 PATCH
 export const PATCH_ROOM_READY_KEY = 'patch-room-ready';
 
@@ -27,3 +30,15 @@ export const POST_BALANCE_USER_KEY = 'post-balance-user';
 
 // 밸런스게임 확인
 export const GET_BALANCE_USER_KEY = 'get-balance-user';
+
+// MBTI게임 순서 확인
+export const GET_MBTI_ORDER_KEY = 'get-mbti-order';
+
+// MBTI 게임 예측 전송
+export const POST_MBTI_USER_KEY = 'post-mbti-user';
+
+// MBTI 게임 결과 확인
+export const GET_MBTI_RESULT_KEY = 'get-mbti-result';
+
+// 마지막 결과 확인
+export const GET_FINAL_RESULT_KEY = 'get-final-result';
