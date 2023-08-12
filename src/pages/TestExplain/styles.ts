@@ -38,7 +38,7 @@ export const StyledInput = styled.input`
   color: #838383;
   border-bottom: 1px solid #838383;
   padding-bottom: 6px;
-
+  border-radius: 0;
   &::placeholder {
     font-size: 14px;
     text-align: center;
