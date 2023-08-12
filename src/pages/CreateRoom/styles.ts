@@ -22,6 +22,7 @@ export const UrlText = styled.p`
   font-size: 18px;
   color: #ffffff;
   margin-top: 70px;
+  text-align: center;
 `;
 
 export const CopyText = styled.p`
