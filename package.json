@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": ".",
+  "homepage": "https://ice-breakers-fe.vercel.app/",
   "dependencies": {
     "@tanstack/react-query": "^4.32.6",
     "axios": "^1.4.0",
