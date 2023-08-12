@@ -1,0 +1,1 @@
+import{j as t,i as e}from"./querykey-87bb2f4e.js";import{u as s}from"./useQuery-7e63b949.js";const a=async o=>{try{return(await e.get(`/user-url/waiting-room/${o}`)).data}catch(r){throw console.error("요청중 에러가 발생하였습니다:",r),r}},c=o=>s([t],()=>a(o),{onError:r=>{console.error("Query 처리중 에러가 발생하였습니다:",r)}});export{c as u};

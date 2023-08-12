@@ -1,0 +1,1 @@
+import{k as o,i as s}from"./querykey-87bb2f4e.js";import{u as a}from"./useQuery-7e63b949.js";const n=async(e,t)=>{try{return(await s.get("/mbti",{params:{url:e,round_id:t}})).data}catch(r){throw console.error("요청중 에러가 발생하였습니다:",r),r}},u=(e,t)=>a([o],()=>n(e,t),{onError:r=>{console.error("Query 처리중 에러가 발생하였습니다:",r)}});export{u};
