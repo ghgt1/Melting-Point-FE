@@ -50,7 +50,6 @@ export default function Balance() {
       const data = JSON.parse(event.data);
       if (data.url === token) {
         if (data.status) {
-          console.log('다음페이지이동');
           number && navigate(`/game/balance/result/${userId}/${token}/${+number}`);
         }
       }
