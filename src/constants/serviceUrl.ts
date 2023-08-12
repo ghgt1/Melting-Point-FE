@@ -1,2 +1,2 @@
 //서비스 URL
-export const SERVICE_URL = 'https://ice-breakers.netlify.app';
+export const SERVICE_URL = 'melting-points.netlify.app';
