@@ -5,9 +5,9 @@ export const MainButton = styled.button<{ $isFinish: boolean }>`
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
-  width: 375px;
   height: 90px;
   border-radius: 12px 12px 0 0;
+  width: 100vw;
   cursor: pointer;
   position: absolute;
   bottom: 0;

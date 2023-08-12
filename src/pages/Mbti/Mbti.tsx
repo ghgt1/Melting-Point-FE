@@ -164,18 +164,18 @@ export default function Mbti() {
               </MbtiBlock>
             </MbtiLine>
           </MbtiContainer>
-          <NextBtn
-            text="다음"
-            onClick={handleNextPage}
-            isFinish={
-              select1.length === 1 &&
-              select2.length === 1 &&
-              select3.length === 1 &&
-              select4.length === 1
-            }
-          />
         </Suspense>
       </StyledContainer>
+      <NextBtn
+        text="다음"
+        onClick={handleNextPage}
+        isFinish={
+          select1.length === 1 &&
+          select2.length === 1 &&
+          select3.length === 1 &&
+          select4.length === 1
+        }
+      />
       {clicked && <LoadingOverlay />}
     </motion.div>
   );

@@ -106,10 +106,10 @@ export default function Adjective() {
             );
           })}
         </AdjectiveContainer>
-        <NextBtn text="결과 볼게요!" onClick={handleNextPage} isFinish={isDone} />
         {toolTip && <Tooltip>형용사는 최소 1개에서 최대 4개까지 선택 가능해요</Tooltip>}
-        {clicked && <LoadingOverlay />}
       </StyledContainer>
+      <NextBtn text="결과 볼게요!" onClick={handleNextPage} isFinish={isDone} />
+      {clicked && <LoadingOverlay />}
     </motion.div>
   );
 }

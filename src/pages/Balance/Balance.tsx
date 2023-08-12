@@ -91,12 +91,12 @@ export default function Balance() {
             {number && balanceList[+number - 1][1]}
           </SelectBox>
         </SelectContainer>
-        <NextBtn
-          text="결과 볼게요!"
-          onClick={handleNextPage}
-          isFinish={select === 1 || select === 2}
-        />
       </StyledContainer>
+      <NextBtn
+        text="결과 볼게요!"
+        onClick={handleNextPage}
+        isFinish={select === 1 || select === 2}
+      />
       {clicked && <LoadingOverlay />}
     </motion.div>
   );
