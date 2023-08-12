@@ -6,6 +6,7 @@ export const StyledContainer = styled.main`
   align-items: center;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 115px;
   margin: 0 24px;
 `;
 

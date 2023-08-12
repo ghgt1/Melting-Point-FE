@@ -8,5 +8,6 @@ export const MainButton = styled.button`
   width: 327px;
   height: 76px;
   border-radius: 12px;
+  margin-bottom: 60px;
   cursor: pointer;
 `;

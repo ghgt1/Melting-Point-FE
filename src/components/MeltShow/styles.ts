@@ -37,4 +37,5 @@ export const EndText = styled.p`
   line-height: 33px;
   white-space: pre-line;
   height: 66px;
+  margin-bottom: 60px;
 `;

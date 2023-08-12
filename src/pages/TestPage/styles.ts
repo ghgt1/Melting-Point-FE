@@ -8,6 +8,7 @@ export const StyledContainer = styled.main`
   white-space: pre-line;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 115px;
 `;
 
 export const ImgContainer = styled.div`

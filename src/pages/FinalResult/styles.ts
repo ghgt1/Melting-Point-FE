@@ -7,6 +7,7 @@ export const StyledContainer = styled.main`
   position: relative;
   min-height: 100vh;
   margin: 0 24px;
+  padding-bottom: 115px;
 `;
 
 export const StyledTitle = styled.p`
