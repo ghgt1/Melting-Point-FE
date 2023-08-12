@@ -1,0 +1,1 @@
+import{j as s,S as e,r as i}from"./index-5b0f04c0.js";function p({children:t}){return s.jsx(e,{children:t})}function u(){const[t,o]=i.useState(!1);return{toolTip:t,setTooltipVisible:()=>{o(!0),setTimeout(()=>{o(!1)},2e3)}}}export{p as T,u};

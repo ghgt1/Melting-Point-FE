@@ -1,1 +1,0 @@
-import{r,N as n}from"./index-590e0a99.js";function N(){const t=r.useContext(n);if(!t)throw new Error("NickNameContextProvider를 찾을 수 없습니다!");const{nickName:e,setNickName:o}=t;return{nickName:e,setNickName:o}}export{N as u};
