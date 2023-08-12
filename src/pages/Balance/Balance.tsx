@@ -70,9 +70,8 @@ export default function Balance() {
         <PageNotice>{`${number}/4`}</PageNotice>
         {Number(number || 1) === 4 ? (
           <StyledTitle>
-            피땀눈물흘려
-            <br />
-            완성한 제안서..
+            피땀눈물 흘려 완성한 제안서
+            <br />둘 중 하나를 선택한다면?
           </StyledTitle>
         ) : (
           <StyledTitle>
