@@ -13,9 +13,9 @@ import { useAdjectiveList } from '@/apis/getAdjectiveList';
 import { useParams, useNavigate } from 'react-router-dom';
 import { returnChar } from '@/utils/returnChar';
 import { AdjectiveListDto } from '@/types/AdjectiveListDto';
-import { CharBlock, NextBtn, MeltShow } from '@/components';
+import { CharBlock, NextBtn, MeltShow, LoadingOverlay } from '@/components';
 import { useNextGame } from '@/apis/postNextGame';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function AdjectiveResult() {
@@ -57,34 +57,40 @@ export default function AdjectiveResult() {
       {meltShow ? (
         <MeltShow id={1} />
       ) : (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+        >
           <StyledContainer>
-            <TopContainer>
-              <StyledTitle>
-                형용사를 통해서 <br /> 나를 소개해보세요!
-              </StyledTitle>
-              <CharImg src={charWithHat} alt="마스코트 이미지" />
-            </TopContainer>
-            <TotalContainer>
-              {data?.map((user: AdjectiveListDto) => {
-                return (
-                  <ResultContainer key={user.nickname}>
-                    <CharBlock
-                      text={user.nickname}
-                      imgSrc={returnChar(user.img_id)}
-                      imgWidth={'80px'}
-                      textSize={'14px'}
-                    />
-                    <GridContainer>
-                      {user.expressions.map((expression, index) => {
-                        return <AdjectiveBlock key={index}>{expression}</AdjectiveBlock>;
-                      })}
-                    </GridContainer>
-                  </ResultContainer>
-                );
-              })}
-            </TotalContainer>
-            <NextBtn text="다음 게임 할래요!" onClick={handleNextPage} />
+            <Suspense fallback={<LoadingOverlay onlySpinner={true} />}>
+              <TopContainer>
+                <StyledTitle>
+                  형용사를 통해서 <br /> 나를 소개해보세요!
+                </StyledTitle>
+                <CharImg src={charWithHat} alt="마스코트 이미지" />
+              </TopContainer>
+              <TotalContainer>
+                {data?.map((user: AdjectiveListDto) => {
+                  return (
+                    <ResultContainer key={user.nickname}>
+                      <CharBlock
+                        text={user.nickname}
+                        imgSrc={returnChar(user.img_id)}
+                        imgWidth={'80px'}
+                        textSize={'14px'}
+                      />
+                      <GridContainer>
+                        {user.expressions.map((expression, index) => {
+                          return <AdjectiveBlock key={index}>{expression}</AdjectiveBlock>;
+                        })}
+                      </GridContainer>
+                    </ResultContainer>
+                  );
+                })}
+              </TotalContainer>
+              <NextBtn text="다음 게임 할래요!" onClick={handleNextPage} />
+            </Suspense>
           </StyledContainer>
         </motion.div>
       )}

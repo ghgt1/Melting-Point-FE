@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   StyledContainer,
@@ -15,7 +15,7 @@ import {
 import { useBalanceList } from '@/apis/getBalance';
 import { useParams, useNavigate } from 'react-router-dom';
 import { splitBalance } from '@/utils/splitBalance';
-import { CharBlock, MeltShow, NextBtn } from '@/components';
+import { CharBlock, MeltShow, NextBtn, LoadingOverlay } from '@/components';
 import { returnChar } from '@/utils/returnChar';
 import { useNextGame } from '@/apis/postNextGame';
 
@@ -46,11 +46,10 @@ export default function BalanceResult() {
       const data = JSON.parse(event.data);
       if (data.url === token) {
         if (data.status) {
-          console.log('다음페이지이동');
           if (Number(number) === 4) {
             setMeltShow(true);
             setTimeout(() => {
-              navigate(`/`);
+              navigate(`/game/mbti/${userId}/${token}/1`);
             }, 3000);
           } else {
             number && navigate(`/game/balance/${userId}/${token}/${+number + 1}`);
@@ -75,59 +74,63 @@ export default function BalanceResult() {
           exit={{ opacity: 0, x: -100 }}
         >
           <StyledContainer>
-            <PageNotice>{`${number}/4`}</PageNotice>
-            <StyledTitle>자유롭게 논의해보세요</StyledTitle>
-            <StyledDescription>팀원들의 선택 결과에요</StyledDescription>
-            <SelectContainer>
-              <SelectBox $isCheck={aPercent > bPercent}>
-                <MarkerContainer>
-                  <Marker></Marker>
-                  <Marker>A.</Marker>
-                  <Marker>{`${aPercent}%`}</Marker>
-                </MarkerContainer>
-                <SelectTextBox>{aDescription}</SelectTextBox>
-                <CharContainer>
-                  {data?.user.map((person) => {
-                    if (person.balance_type === aDescription) {
-                      return (
-                        <CharBlock
-                          text={person.nickname}
-                          textSize="10px"
-                          imgWidth="60px"
-                          imgSrc={returnChar(person.img_id)}
-                        />
-                      );
-                    }
-                  })}
-                </CharContainer>
-              </SelectBox>
-              <SelectBox $isCheck={bPercent > aPercent}>
-                <MarkerContainer>
-                  <Marker></Marker>
-                  <Marker>B.</Marker>
-                  <Marker>{`${bPercent}%`}</Marker>
-                </MarkerContainer>
-                <SelectTextBox>{bDescription}</SelectTextBox>
-                <CharContainer>
-                  {data?.user.map((person) => {
-                    if (person.balance_type === bDescription) {
-                      return (
-                        <CharBlock
-                          text={person.nickname}
-                          textSize="10px"
-                          imgWidth="60px"
-                          imgSrc={returnChar(person.img_id)}
-                        />
-                      );
-                    }
-                  })}
-                </CharContainer>
-              </SelectBox>
-            </SelectContainer>
-            <NextBtn
-              text={Number(number) === 4 ? '다음 게임 할게요!' : '다음'}
-              onClick={handleNextPage}
-            />
+            <Suspense fallback={<LoadingOverlay onlySpinner={true} />}>
+              <PageNotice>{`${number}/4`}</PageNotice>
+              <StyledTitle>자유롭게 논의해보세요</StyledTitle>
+              <StyledDescription>팀원들의 선택 결과에요</StyledDescription>
+              <SelectContainer>
+                <SelectBox $isCheck={aPercent > bPercent}>
+                  <MarkerContainer>
+                    <Marker></Marker>
+                    <Marker>A.</Marker>
+                    <Marker>{`${aPercent}%`}</Marker>
+                  </MarkerContainer>
+                  <SelectTextBox>{aDescription}</SelectTextBox>
+                  <CharContainer>
+                    {data?.user.map((person) => {
+                      if (person.balance_type === aDescription) {
+                        return (
+                          <CharBlock
+                            text={person.nickname}
+                            textSize="10px"
+                            imgWidth="60px"
+                            imgSrc={returnChar(person.img_id)}
+                            key={person.nickname}
+                          />
+                        );
+                      }
+                    })}
+                  </CharContainer>
+                </SelectBox>
+                <SelectBox $isCheck={bPercent > aPercent}>
+                  <MarkerContainer>
+                    <Marker></Marker>
+                    <Marker>B.</Marker>
+                    <Marker>{`${bPercent}%`}</Marker>
+                  </MarkerContainer>
+                  <SelectTextBox>{bDescription}</SelectTextBox>
+                  <CharContainer>
+                    {data?.user.map((person) => {
+                      if (person.balance_type === bDescription) {
+                        return (
+                          <CharBlock
+                            text={person.nickname}
+                            textSize="10px"
+                            imgWidth="60px"
+                            imgSrc={returnChar(person.img_id)}
+                            key={person.nickname}
+                          />
+                        );
+                      }
+                    })}
+                  </CharContainer>
+                </SelectBox>
+              </SelectContainer>
+              <NextBtn
+                text={Number(number) === 4 ? '다음 게임 할게요!' : '다음'}
+                onClick={handleNextPage}
+              />
+            </Suspense>
           </StyledContainer>
         </motion.div>
       )}
