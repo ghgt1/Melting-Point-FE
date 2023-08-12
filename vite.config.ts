@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 // +tsconfig.json
 export default defineConfig({
   plugins: [react()],
+  base: '/IceBreakers-FE/',
   resolve: {
     alias: [
       { find: '@', replacement: '/src' },
