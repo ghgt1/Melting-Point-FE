@@ -20,7 +20,7 @@ export default function CreateRoom() {
   const url = createUrl(data || '');
 
   const handleCopyURL = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    if (data) clipboardCopy(url)(e);
+    if (data) clipboardCopy(`http://${url}`)(e);
     setTooltipVisible();
   };
 
