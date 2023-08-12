@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    overflow:hidden;
   }
 
   body {
@@ -26,6 +27,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard', sans-serif;
     background-color: #000000;
     color: #ffffff;
+    overflow:hidden;
+    position:relative
   }
 
   main {
