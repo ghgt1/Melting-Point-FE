@@ -1,19 +1,21 @@
+import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import {
-  Main,
-  CreateRoom,
-  TestExplain,
-  TestPage,
-  TestResult,
-  GameLobby,
-  GameExplain,
-  Adjective,
-  AdjectiveResult,
-  Question,
-  Balance,
-  BalanceResult,
-} from './pages';
 import { AnimateLayout } from './components';
+const Main = lazy(() => import('./pages/Main/Main.tsx'));
+const CreateRoom = lazy(() => import('./pages/CreateRoom/CreateRoom.tsx'));
+const TestExplain = lazy(() => import('./pages/TestExplain/TestExplain.tsx'));
+const TestPage = lazy(() => import('./pages/TestPage/TestPage.tsx'));
+const TestResult = lazy(() => import('./pages/TestResult/TestResult.tsx'));
+const GameLobby = lazy(() => import('./pages/GameLobby/GameLobby.tsx'));
+const GameExplain = lazy(() => import('./pages/GameExplain/GameExplain.tsx'));
+const Adjective = lazy(() => import('./pages/Adjective/Adjective.tsx'));
+const AdjectiveResult = lazy(() => import('./pages/AdjectiveResult/AdjectiveResult.tsx'));
+const Question = lazy(() => import('./pages/Question/Question.tsx'));
+const Balance = lazy(() => import('./pages/Balance/Balance.tsx'));
+const BalanceResult = lazy(() => import('./pages/BalanceResult/BalanceResult.tsx'));
+const Mbti = lazy(() => import('./pages/Mbti/Mbti.tsx'));
+const MbtiResult = lazy(() => import('./pages/MbtiResult/MbtiResult.tsx'));
+const FinalResult = lazy(() => import('./pages/FinalResult/FinalResult.tsx'));
 
 const route = [
   {
@@ -75,6 +77,18 @@ const route = [
       {
         path: 'balance/result/:userId/:token/:number',
         element: <BalanceResult />,
+      },
+      {
+        path: 'mbti/:userId/:token/:number',
+        element: <Mbti />,
+      },
+      {
+        path: 'mbti/result/:userId/:token/:number',
+        element: <MbtiResult />,
+      },
+      {
+        path: 'final/result/:token',
+        element: <FinalResult />,
       },
     ],
   },
