@@ -7,3 +7,4 @@ export { default as MemberImgCard } from './MemberImgCard/MemberImgCard';
 export { default as LoadingOverlay } from './LoadingOverlay/LoadingOverlay';
 export { default as CharBlock } from './CharBlock/CharBlock';
 export { default as MeltShow } from './MeltShow/MeltShow';
+export { default as MbtiModal } from './MbtiModal/MbtiModal';

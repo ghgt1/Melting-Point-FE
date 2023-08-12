@@ -10,3 +10,6 @@ export { default as AdjectiveResult } from './AdjectiveResult/AdjectiveResult';
 export { default as Question } from './Question/Question';
 export { default as Balance } from './Balance/Balance';
 export { default as BalanceResult } from './BalanceResult/BalanceResult';
+export { default as Mbti } from './Mbti/Mbti';
+export { default as MbtiResult } from './MbtiResult/MbtiResult';
+export { default as FinalResult } from './FinalResult/FinalResult';
