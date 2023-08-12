@@ -4,37 +4,33 @@ import charOrange from '@assets/charOrange.png';
 import charYellow from '@assets/charYellow.png';
 import charGreen from '@assets/charGreen.png';
 import charBlue from '@assets/charBlue.png';
-import { NextBtn } from '@/components';
+import { NextBtn, Tooltip } from '@/components';
 import { motion } from 'framer-motion';
 import { useTestContext } from '@/hooks/useTestContext';
 import { testResult } from '@/constants/testList';
 import { useParams } from 'react-router-dom';
 import { useRoomCheckIn } from '@/apis/postRoomCheckIn';
-import { useEffect } from 'react';
+import { useGameStart } from '@/apis/getGameStart';
+import { useTooltip } from '@/hooks/useTooltip';
 
 export default function TestResult() {
   const { nickName } = useNickNameContext();
   const { result } = useTestContext();
   const { token } = useParams();
 
-  const { data, mutate } = useRoomCheckIn({
+  const { toolTip, setTooltipVisible } = useTooltip();
+
+  const { mutate } = useRoomCheckIn({
     img_id: testResult[result][0],
     nickname: nickName || ' ',
     url: token || ' ',
   });
 
-  console.log(data);
-
-  useEffect(() => {
-    console.log(data);
-    if (data) {
-      // Data is available, handle it here
-      console.log(data);
-    }
-  }, [data]);
+  const { data } = useGameStart(token || ' ');
 
   const handleNextPage = () => {
-    mutate();
+    if (data) mutate();
+    else setTooltipVisible();
   };
 
   const imgSrc = (() => {
@@ -68,6 +64,7 @@ export default function TestResult() {
         <CardImage src={imgSrc} alt={testResult[result][1]} />
         <ExplainText>{testResult[result][2]}</ExplainText>
         <NextBtn text="다음" onClick={handleNextPage} />
+        {toolTip && <Tooltip>게임이 시작되어 입장이 불가능합니다</Tooltip>}
       </StyledContainer>
     </motion.div>
   );
