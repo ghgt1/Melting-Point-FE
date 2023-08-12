@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { AnimateLayout } from './components';
 const Main = lazy(() => import('./pages/Main/Main.tsx'));
