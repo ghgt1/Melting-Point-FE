@@ -12,7 +12,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 export default function TestPage() {
   const [page, setPage] = useState(1);
 
-  const { result } = useTestContext();
+  const { result, setResult } = useTestContext();
 
   const { toolTip, setTooltipVisible } = useTooltip();
 
@@ -25,6 +25,10 @@ export default function TestPage() {
       navigate(`/result/${token}`);
     }
   }, [page]);
+
+  useEffect(() => {
+    setResult('');
+  }, []);
 
   return (
     <StyledContainer>
@@ -92,6 +96,8 @@ export default function TestPage() {
       {toolTip && <Tooltip>선택지를 골라주세요</Tooltip>}
       <NextBtn
         onClick={() => {
+          console.log(page);
+          console.log(result);
           if (page === 1) {
             if (result?.length === 1) {
               setPage(page + 1);
