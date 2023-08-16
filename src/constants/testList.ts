@@ -1,4 +1,4 @@
-export const testList = [
+const testList = [
   [
     '회사에 새로운 후임이 들어와서 사수가 된 당신! 첫 업무를 완수한 후임에게 피드백을 준다면?',
     '논리적으로 수정할 부분을 모두 말한다',
@@ -21,13 +21,15 @@ export const testList = [
   ],
 ];
 
+Object.freeze(testList);
+
 //1 냉철한 전략가. 2 다정한 서포터 3 꼼꼼한 관리자 4진취적인 아이디어 뱅크형
 
 interface TestResult {
   [key: string]: [number, string, string];
 }
 
-export const testResult: TestResult = {
+const testResult: TestResult = {
   '1111': [
     1,
     '냉철한 전략가형',
@@ -109,3 +111,7 @@ export const testResult: TestResult = {
     '다정한 서포터형은 커뮤니케이션 능력이 뛰어나며, 포용력과 친절, 조화의 아이콘이에요!',
   ],
 };
+
+Object.freeze(testResult);
+
+export { testList, testResult };

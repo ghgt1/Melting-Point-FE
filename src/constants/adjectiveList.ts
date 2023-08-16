@@ -1,4 +1,4 @@
-export const adjectiveList = [
+const adjectiveList = [
   {
     id: 1,
     expression: '꼼꼼한',
@@ -64,3 +64,7 @@ export const adjectiveList = [
     expression: '엉뚱한',
   },
 ];
+
+Object.freeze(adjectiveList);
+
+export default adjectiveList;
