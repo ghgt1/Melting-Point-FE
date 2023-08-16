@@ -7,4 +7,4 @@ const balanceList = [
 
 Object.freeze(balanceList);
 
-export default balanceList;
+export { balanceList };

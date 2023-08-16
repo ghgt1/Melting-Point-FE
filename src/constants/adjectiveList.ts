@@ -67,4 +67,4 @@ const adjectiveList = [
 
 Object.freeze(adjectiveList);
 
-export default adjectiveList;
+export { adjectiveList };

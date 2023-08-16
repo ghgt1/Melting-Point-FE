@@ -96,8 +96,6 @@ export default function TestPage() {
       {toolTip && <Tooltip>선택지를 골라주세요</Tooltip>}
       <NextBtn
         onClick={() => {
-          console.log(page);
-          console.log(result);
           if (page === 1) {
             if (result?.length === 1) {
               setPage(page + 1);
