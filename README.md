@@ -13,7 +13,13 @@
 
 ## 배포주소
 
-데모를 [여기서](https://melting-point.vercel.app/) 보실수 있습니다
+멜팅포인트를 [여기서](https://melting-point.vercel.app/) 즐길수 있습니다.
+
+## 시연영상
+
+
+https://github.com/ghgt1/Melting-Point-FE/assets/35508595/1d20630a-b05b-45cb-81c0-c2461076ce09
+
 
 ## 설치법
 
